@@ -95,3 +95,36 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 # Update shell
 source ~/.zshrc
 ```
+
+7. **kubectl**
+```
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubectl
+```
+
+8. **minikube**
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+minikube start --driver=docker
+minikube config set driver docker
+```
+
+9. other packages
+```
+# k9s
+sudo wget -qO- https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_amd64.tar.gz | tar zxvf -  -C /tmp/
+sudo mv /tmp/k9s /usr/local/bin
+
+# golang-migrate
+cd /usr/local/bin
+sudo curl -L https://github.com/golang-migrate/migrate/releases/download/v4.16.2/migrate.linux-amd64.tar.gz | sudo tar xvz
+```
+
