@@ -126,5 +126,12 @@ sudo mv /tmp/k9s /usr/local/bin
 # golang-migrate
 cd /usr/local/bin
 sudo curl -L https://github.com/golang-migrate/migrate/releases/download/v4.16.2/migrate.linux-amd64.tar.gz | sudo tar xvz
+
+# scc (LOC counter)
+go install github.com/boyter/scc/v3@latest
+
+# lazydocker
+go install github.com/jesseduffield/lazydocker@latest
+
 ```
 
